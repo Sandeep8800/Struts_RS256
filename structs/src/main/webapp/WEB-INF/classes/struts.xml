@@ -1,0 +1,34 @@
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+		"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.convention.result.path" value="/" />
+	<constant name="struts.convention.action.mapAllMatches" value="true" />
+
+	<!-- Enable JSON plugin -->
+	<constant name="struts.mapper.class" value="org.apache.struts2.dispatcher.mapper.DefaultActionMapper" />
+
+	<package name="com.structs.action" extends="struts-default,json-default" namespace="/">
+
+		<!-- Default action for index page -->
+		<default-action-ref name="index" />
+
+		<!-- Index action to show main dashboard page -->
+		<action name="index" class="com.structs.action.SupersetAction">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="getGuestToken" class="com.structs.action.SupersetAction" method="getGuestToken">
+			<result name="success" type="json" />
+			<result name="error" type="json" />
+		</action>
+
+
+	</package>
+
+
+</struts>

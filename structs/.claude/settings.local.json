@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"C:\\Users\\Sandeep\\Downloads\\struts-main\\structs\")",
+      "Bash(dir \"C:\\Users\\Sandeep\\Downloads\\struts-main\\structs\\src\")",
+      "Bash(dir \"C:\\Users\\Sandeep\\Downloads\\struts-main\")",
+      "Bash(dir \"C:\\Users\\Sandeep\\Downloads\\struts-main\\structs\\src\" /s /b)",
+      "Bash(dir:*)",
+      "Bash(mvn clean package:*)",
+      "Bash(where:*)",
+      "Bash(\"C:\\Users\\Sandeep\\Downloads\\maven-mvnd-1.0.3-windows-amd64\\bin\\mvnd.cmd\" clean package)",
+      "Bash(\"C:\\Users\\Sandeep\\Downloads\\maven-mvnd-1.0.3-windows-amd64\\bin\\mvnd.cmd\" jetty:run)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(tasklist:*)",
+      "Bash(taskkill:*)",
+      "Bash(\"C:\\Users\\Sandeep\\Downloads\\apache-tomcat-9.0.111\\bin\\startup.bat\")",
+      "Bash(wmic process:*)",
+      "Bash(curl:*)",
+      "Bash(\"C:\\Users\\Sandeep\\Downloads\\maven-mvnd-1.0.3-windows-amd64\\bin\\mvnd.cmd\" clean package -DskipTests)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

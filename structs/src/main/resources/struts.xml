@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="superset"/>
+
+    <package name="default" extends="struts-default,json-default" namespace="/">
+
+        <!-- Show Dashboard Action -->
+        <action name="dashboard" class="com.structs.action.SupersetAction" method="showDashboard">
+            <result name="success">/index.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <!-- Get Guest Token (AJAX) -->
+        <action name="getGuestToken" class="com.structs.action.SupersetAction" method="getGuestTokenAction">
+            <result type="json">
+                <param name="root">tokenInfo</param>
+            </result>
+        </action>
+
+        <!-- Refresh Token (AJAX) -->
+        <action name="refreshToken" class="com.structs.action.SupersetAction" method="refreshToken">
+            <result type="json">
+                <param name="root">tokenInfo</param>
+            </result>
+        </action>
+    </package>
+</struts>
+
